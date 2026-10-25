@@ -1,0 +1,38 @@
+{
+  "unet": {
+    "display_name": "U-Net (ResNet34 encoder)",
+    "architecture": "smp.Unet",
+    "params_millions": 24.44,
+    "epochs": 50,
+    "test_loss": 0.3605,
+    "pixel_acc": 0.8990,
+    "precision": 0.5696,
+    "recall": 0.5085,
+    "f1": 0.5119,
+    "miou": 0.4395,
+    "dropzone_accuracy_pct": 92.00,
+    "dropzone_mse": 0.001877
+  },
+  "deeplabv3plus": {
+    "display_name": "DeepLabV3+ (ResNet34 encoder)",
+    "architecture": "smp.DeepLabV3Plus",
+    "params_millions": 22.44,
+    "epochs": 50,
+    "test_loss": 0.3128,
+    "pixel_acc": 0.9010,
+    "precision": 0.6580,
+    "recall": 0.6008,
+    "f1": 0.6239,
+    "miou": 0.5259,
+    "dropzone_accuracy_pct": 91.62,
+    "dropzone_mse": 0.001853
+  },
+  "training": {
+    "dataset": "Semantic Drone Dataset (400 images, 24 classes)",
+    "split": "70/20/10 = 280/80/40",
+    "image_size": "384x576",
+    "optimizer": "AdamW lr 3e-4, cosine schedule",
+    "loss": "CrossEntropy",
+    "encoder": "ImageNet-pretrained ResNet34"
+  }
+}
